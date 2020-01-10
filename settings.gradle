@@ -1,0 +1,10 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../chatr_flutter/android/include_flutter.groovy'
+))
+rootProject.name='Chatr'
+
+include ':chatr_flutter'
+project(':chatr_flutter').projectDir = new File('../chatr_flutter')
